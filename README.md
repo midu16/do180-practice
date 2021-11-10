@@ -25,12 +25,12 @@ You can also use the VirtualBox console to interact with the VMs or through a te
 
 ## System Details:
 > workstation
-- 192.168.88.4
-- Gateway - 192.168.88.1
+- 192.168.55.4
+- Gateway - 192.168.55.1
 - DNS - 8.8.8.8
 > registry
-- 192.168.88.5
-- Gateway - 192.168.88.1
+- 192.168.55.5
+- Gateway - 192.168.55.1
 - DNS - 8.8.8.8
 
 ## Accessing the systems
@@ -38,4 +38,14 @@ Remember to add the IP addresses to your local host file if you want to connect 
 Username - vagrant
 Password - vagrant
 - For root - use `sudo` or `sudo su`
-Access example - `ssh vagrant@192.168.88.4` or `vagrant ssh workstation`
+Access example - `ssh vagrant@192.168.55.4` or `vagrant ssh workstation`
+
+### Adding the hosts to your localhost /etc/hosts
+```
+$ cat << EOF > /etc/hosts
+# do180-practice environment hosts
+192.168.55.5 registry.do180.lab
+192.168.55.4 workstation.do180.lab 
+##
+EOF
+```
